@@ -306,7 +306,7 @@
 							<div id="collapse1_12" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion" data-bs-parent="#bootstrap-accordion_12">
 								<div class="panel-body">
 									<p class="mbr-fonts-style panel-text display-7">
-										Подключение к API занимает всего пару минут через <a href="https://t.me/pwMerchantBot" class="text-primary">Telegram-бота</a>.&nbsp;Если что-то непонятно — мы добавим вас в технический чат и поможем с интеграцией. Пожалуйста, <a href="https://t.me/pwMerchantBot" class="text-primary">свяжитесь с нами</a>.</p>
+										Подключение к API занимает всего пару минут через <a href="https://t.me/pwMerchantBot" class="text-primary connect-api-link">Telegram-бота</a>.&nbsp;Если что-то непонятно — мы добавим вас в технический чат и поможем с интеграцией. Пожалуйста, <a href="https://t.me/pwMerchantBot" class="text-primary connect-api-link">свяжитесь с нами</a>.</p>
 								</div>
 							</div>
 						</div>
@@ -412,18 +412,30 @@
     <input name="animation" type="hidden">
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.connect-api-btn');
-    buttons.forEach(function (btn) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault();
-        ym(97592767, 'reachGoal', 'connect_api');
-        setTimeout(function () {
-          window.location.href = btn.href;
-        }, 300);
-      });
-    });
-  });
+	document.addEventListener('DOMContentLoaded', function () {	
+	// для кнопок
+	const buttons = document.querySelectorAll('.connect-api-btn');
+	buttons.forEach(function (btn) {
+		btn.addEventListener('click', function (e) {
+		e.preventDefault();
+		ym(97592767, 'reachGoal', 'connect_api');
+		setTimeout(function () {
+			window.location.href = btn.href;
+		}, 300);
+		});
+	});
+	// для текстовых ссылок
+	const links = document.querySelectorAll('.connect-api-link');
+	links.forEach(function (link) {
+		link.addEventListener('click', function (e) {
+		e.preventDefault();
+		ym(97592767, 'reachGoal', 'connect_api');
+		setTimeout(function () {
+			window.location.href = link.href;
+		}, 300);
+		});
+	});
+	});
 </script>
 
   </body>
