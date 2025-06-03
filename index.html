@@ -85,7 +85,7 @@
 						<a class="nav-link link text-black text-primary display-4" href="index.html#list01-e">Вопросы</a>
 					</li></ul>
 				
-				<div class="navbar-buttons mbr-section-btn"><a class="btn btn-primary display-4" href="https://t.me/pwMerchantBot"><span class="socicon socicon-steam mbr-iconfont mbr-iconfont-btn"></span>Подключиться к API</a></div>
+				<div class="navbar-buttons mbr-section-btn"><a id="connect-api-btn" class="btn btn-primary display-4" href="https://t.me/pwMerchantBot"><span class="socicon socicon-steam mbr-iconfont mbr-iconfont-btn"></span>Подключиться к API</a></div>
 			</div>
 		</div>
 	</nav>
@@ -410,5 +410,22 @@
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
     <input name="animation" type="hidden">
+
+
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const btn = document.getElementById('connect-api-btn');
+		if (btn) {
+		btn.addEventListener('click', function (e) {
+			e.preventDefault(); // отменяет моментальный переход
+			ym(97592767,'reachGoal','connect_api'); // цель Яндекс.Метрики
+			setTimeout(function () {
+			window.location.href = btn.href; // переходим по ссылке через 300мс
+			}, 300); // достаточно, чтобы цель отправилась
+		});
+		}
+	});
+	</script>
+
   </body>
 </html>
